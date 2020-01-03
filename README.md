@@ -22,6 +22,7 @@ Install
    Password: admin
 
     M O S T    I M P O R T A N T !!!!!!!!!!!
+    
 =================================================
 =====> CHANGE ADMIN PASSWORD IN "Settings" <=====
 =================================================
