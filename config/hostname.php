@@ -1,0 +1,7 @@
+<?php
+
+#SET HOSTNAME MANUALLY IF REQUIRED
+define("GLOBAL_BASE_URL", "");
+
+
+ ?>

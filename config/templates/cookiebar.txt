@@ -1,0 +1,25 @@
+<div id="cookiemanager_cookiebar" style="display:none;box-shadow: 0px 0px 10px 7px rgba(0,0,0,0.5);width:100%;position:fixed;bottom:0px;left:0px;font-family:${cookieManager.cookiebar.fontfamily};background:${cookieManager.cookiebar.bgcolor};padding-top:${cookieManager.cookiebar.paddingbottomtop};padding-bottom:${cookieManager.cookiebar.paddingbottomtop};opacity:${cookieManager.cookiebar.bgopacity};z-index:${cookieManager.cookiebar.zindex};${cookieManager.cookiebar.morecss}">
+<div style="width:90%;max-width:${cookieManager.cookiebar.barmaintextmaxwith};margin:0px auto;margin-bottom:25px;color:${cookieManager.cookiebar.barmaintextcolor};font-size:${cookieManager.cookiebar.barmaintextfontsize};text-align:center;">
+${cookieManager.cookiebar.barmaintext}
+</div>
+<div style="width:90%;max-width:${cookieManager.cookiebar.barmaintextmaxwith};margin:0px auto;">
+<table width="100%">
+<tr>
+<td id="cookiemanager_accept" title="${cookieManager.cookiebar.accepttitle}" width="65%" style="cursor:pointer;width:65%;padding:15px;text-align:center;vertical-align:middle;font-size:${cookieManager.cookiebar.acceptfontsize};background:${cookieManager.cookiebar.acceptbgcolor};color:${cookieManager.cookiebar.acceptfontcolor};font-weight:${cookieManager.cookiebar.acceptfontweight};">
+&raquo;&nbsp;${cookieManager.cookiebar.acceptcontent}
+</td>
+<td id="cookiemanager_more" class="cookiemanager_boxopener" title="${cookieManager.cookiebar.moretitle}" width="35%" style="cursor:pointer;width:35%;padding:15px;text-align:center;vertical-align:middle;font-size:${cookieManager.cookiebar.morefontsize};background:${cookieManager.cookiebar.morebgcolor};color:${cookieManager.cookiebar.morefontcolor};font-weight:${cookieManager.cookiebar.morefontweight};">
+...${cookieManager.cookiebar.morecontent}
+</td>
+</tr>
+</table>
+</div>
+<div style="text-align:center">
+<br>
+<a href="" title="Open CookieManager" target="_blank">
+<img src="${cookieManager.logourl}">
+</a>
+</div>
+</div>
+<div id="cookiemanager_fingerprint" class="cookiemanager_boxopener" title="${cookieManager.cookiebar.fingerprinttitle}" style="cursor:pointer;width:60px;height:60px;position:fixed;bottom:20px;left:20px;background:url('${cookieManager.fingerprinturl}') no-repeat center center;border-radius:45px;background-color:${cookieManager.cookiebar.bgcolor};opacity:0.8;z-index:${cookieManager.cookiebar.fingerprintzindex};">
+</div>

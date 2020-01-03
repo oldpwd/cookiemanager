@@ -1,0 +1,61 @@
+<br><br>
+<div style="font-size:${cookieManager.cookiebox.boxcookiedescfontsize};">
+  <table width="100%" style="border-bottom:1px solid ${cookieManager.cookiebox.boxcookiebordercolor};margin-bottom:10px;">
+    <tr>
+      <td style="vertical-align:middle;text-align:left;"><img src="${cookieManager.categories[cat].cookies[cookie].cookieswitcher}" class="cookiemanager_cookieswitcher" essential="${cookieManager.categories[cat].cookies[cookie].cookieessential}" name="${cookieManager.categories[cat].cookies[cookie].cookieid}" status="${cookieManager.categories[cat].cookies[cookie].cookiestatus}"  style="cursor:pointer;display:inline-block;margin-right:10px;"></td>
+      <td width="100%" style="vertical-align:middle;font-size:${cookieManager.cookiebox.boxcookiedeschlfontsize};"><b>${catZ}.${cooZ}. ${cookieManager.categories[cat].cookies[cookie].cookiename}</b></td>
+    </tr>
+  </table>
+  ${cookieManager.categories[cat].cookies[cookie].cookiebeschreibung}
+  <table width="100%" style="margin-top:10px;">
+    <tr style="background:${cookieManager.cookiebox.boxcookietdoddbgcolor};">
+      <td width="50%">
+        ${cookieManager.cookiebox.label_cookiepersonenbezogenedaten}:
+      </td>
+      <td width="50%">
+        ${cookieManager.categories[cat].cookies[cookie].cookiepersonenbezogenedaten}
+      </td>
+    </tr>
+    <tr>
+      <td width="50%">
+        ${cookieManager.cookiebox.label_cookielandderdatenerfassung}:
+      </td>
+      <td width="50%">
+        ${cookieManager.categories[cat].cookies[cookie].cookielandderdatenerfassung}
+      </td>
+    </tr>
+    <tr style="background:${cookieManager.cookiebox.boxcookietdoddbgcolor};">
+      <td width="50%">
+        ${cookieManager.cookiebox.label_cookiewirdgeloeschtnach}:
+      </td>
+      <td width="50%">
+        ${cookieManager.categories[cat].cookies[cookie].cookiewirdgeloeschtnach}
+      </td>
+    </tr>
+    <tr>
+      <td width="50%">
+        ${cookieManager.cookiebox.label_cookiecompany}:
+      </td>
+      <td width="50%">
+        ${cookieManager.categories[cat].cookies[cookie].company}<br>
+      </td>
+    </tr>
+    <tr style="background:${cookieManager.cookiebox.boxcookietdoddbgcolor};">
+      <td width="50%">
+        ${cookieManager.cookiebox.label_cookiecompanylinks}:
+      </td>
+      <td width="50%">
+        <a href="${cookieManager.categories[cat].cookies[cookie].companyimpressum}" title="Impressum des Unternehmens" style="color:${cookieManager.cookiebox.boxhandacolor};" target="_blank">Impressum</a><br>
+        <a href="${cookieManager.categories[cat].cookies[cookie].companydatenschutz}" title="Datenschutzerklärung des Unternehmens" style="color:${cookieManager.cookiebox.boxhandacolor};" target="_blank">Datenschutz</a><br>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%">
+        ${cookieManager.cookiebox.label_cookiecompanyoptin}:
+      </td>
+      <td width="50%">
+        ${cookieManager.categories[cat].cookies[cookie].cookieoptin}
+      </td>
+    </tr>
+  </table>
+</div>

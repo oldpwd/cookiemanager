@@ -1,0 +1,4 @@
+<br><br>
+<div style="font-size:${cookieManager.cookiebox.h2fontsize};font-weight:${cookieManager.cookiebox.h2fontweight};color:${cookieManager.cookiebox.boxhandacolor};border-bottom:1px solid ${cookieManager.cookiebox.boxbordercolor};">${catZ}. ${cookieManager.categories[cat].name}</div><br>
+${cookieManager.categories[cat].description}
+${cookieManagerCookies}

@@ -1,0 +1,12 @@
+# CookieManager is released under the GNU Public License, version 3 or later.
+# http://www.gnu.org/licenses/gpl-3.0-standalone.html
+# Author SL, Raistech GmbH
+
+RewriteEngine On
+
+RewriteRule ^(config|src).*$ chroot/ [END]
+RewriteRule ^([a-f0-9]{64})\/([a-f0-9]{32})\/([0-9C]+)\/(S)\/?$ index.php?token=$1&userid=$2&allowlevel=$3&switch=$4
+RewriteRule ^([a-f0-9]{64})\/([a-f0-9]{32})\/([0-9C]+)\/?$ index.php?token=$1&userid=$2&allowlevel=$3
+RewriteRule ^([a-f0-9]{64})\/?$ index.php?token=$1
+RewriteRule ^admin\/([a-z\-]+).html$ admin/index.php?site=$1
+RewriteRule ^admin\/preview\/([a-f0-9]{64})\/?$ admin/preview/index.php?token=$1

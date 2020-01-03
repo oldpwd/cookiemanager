@@ -1,0 +1,30 @@
+<div id="cookiemanager_cookiebox_bg" style="display:none;width:100%;height:100%;position:fixed;top:0px;left:0px;background:${cookieManager.cookiebox.overlaybg};opacity:${cookieManager.cookiebox.overlayopacity};z-index:${cookieManager.cookiebox.overlayzindex};"></div>
+<div id="cookiemanager_cookiebox" style="display:none;font-family:${cookieManager.cookiebox.boxfontfamily};color:${cookieManager.cookiebox.boxfontcolor};width:100%;height:100%;position:fixed;top:0px;left:0px;z-index:${cookieManager.cookiebox.boxzindex};">
+  <div style="overflow:auto;border:1px solid ${cookieManager.cookiebox.boxbordercolor};border-bottom-width:0px;width:90%;max-width:${cookieManager.cookiebox.boxmaxwidth};height:90%;max-height:${cookieManager.cookiebox.boxmaxheight};margin:0px auto;margin-top:25px;background:${cookieManager.cookiebox.boxbgcolor};">
+    <div style="padding:25px;font-size:${cookieManager.cookiebox.boxfontsize};">
+    <div style="font-size:${cookieManager.cookiebox.h2fontsize};font-weight:${cookieManager.cookiebox.h2fontweight};color:${cookieManager.cookiebox.boxhandacolor};border-bottom:1px solid ${cookieManager.cookiebox.boxbordercolor};text-align:center;">${cookieManager.cookiebox.boxhcontent}</div><br>
+    <div style="text-align:center;">
+    ${cookieManager.host}
+    </div>
+    <div style="text-align:center;font-size:${cookieManager.cookiebox.boxcookiedescfontsize};">
+    ID: ${cookieManager.userid}<br>Build: ${cookieManager.userreg}
+    </div>
+    <br>
+    ${cookieManager.cookiebox.boxeinleitung}
+    <br>
+    ${cookieManagerCategories}
+    </div>
+  </div>
+  <div style="border:1px solid ${cookieManager.cookiebox.boxbordercolor};border-top-width:0px;width:90%;max-width:700px;margin:0px auto;background:#fff;">
+    <table width="100%">
+      <tr>
+        <td id="cookiemanager_cookiebox_accept" title="${cookieManager.cookiebox.boxaccepttitle}" width="50%" style="cursor:pointer;font-size:${cookieManager.cookiebox.boxacceptfontsize};width:50%;padding:15px;background:${cookieManager.cookiebox.boxacceptbgcolor};color:${cookieManager.cookiebox.boxacceptfontcolor};font-weight:${cookieManager.cookiebox.boxacceptfontweight};text-align:center;vertical-align:middle;">
+          &raquo;&nbsp;${cookieManager.cookiebox.boxacceptcontent}
+        </td>
+        <td id="cookiemanager_cookiebox_close" title="${cookieManager.cookiebox.boxclosetitle}" width="50%" style="cursor:pointer;font-size:${cookieManager.cookiebox.boxclosefontsize};width:50%;padding:15px;background:${cookieManager.cookiebox.boxclosebgcolor};color:${cookieManager.cookiebox.boxclosefontcolor};font-weight:${cookieManager.cookiebox.boxclosefontweight};text-align:center;vertical-align:middle;">
+          &raquo;&nbsp;${cookieManager.cookiebox.boxclosecontent}
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

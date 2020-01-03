@@ -1,0 +1,19 @@
+:root{
+  --action-color: #007BFF;
+}
+body, html{ height:100vh; }
+h1, h2, h3{ text-align:center; }
+h3{ letter-spacing:2px;color:var(--action-color); font-weight:bold; }
+.linkleiste a:link, .linkleiste a:active, .linkleiste a:visited{ display:block;padding:15px;border-bottom:1px solid #f2f2f2; }
+.linkleiste a:hover{ background:#f2f2f2;text-decoration:none; }
+a.sublink{ font-size:14px; }
+a.aktiv, a.aktiv:hover{  color:#fff; background:var(--action-color); }
+div.linie{ margin:25px 0px 27px 0px; height:2px; border-top:1px solid #d0d0d0; }
+th, td{ vertical-align:middle!important; }
+.hiddenaction{ cursor:pointer; }
+.actbutton{ width:50px!important; }
+textarea.tag{ font-size:13px; }
+.hostnameupdateform{ position:absolute;top:-100px;}
+.viewport{ position:sticky;top:25px;left:0px;width:100%;border:1px solid #444; }
+.kleinschrift{ font-size:14px; }
+.grayscale{ color:#999; }
