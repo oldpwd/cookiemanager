@@ -1,4 +1,4 @@
-CookieManager 0.1.0 pre alpha
+CookieManager 0.1.0
 
 CookieManager is released under the GNU Public License, version 3 or later.
 
