@@ -40,8 +40,6 @@ Aditional settings
 -----------------------------------
 Language: config/lang.php
 
-Hostname: config/hostname.php
-
 Timeouts: config/timeout.php
 
 -----------------------------------
