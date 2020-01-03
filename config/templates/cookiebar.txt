@@ -16,7 +16,7 @@ ${cookieManager.cookiebar.barmaintext}
 </div>
 <div style="text-align:center">
 <br>
-<a href="" title="Open CookieManager" target="_blank">
+<a href="https://github.com/oldpwd/cookiemanager" title="Open CookieManager" target="_blank">
 <img src="${cookieManager.logourl}">
 </a>
 </div>
