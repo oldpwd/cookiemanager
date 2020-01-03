@@ -20,7 +20,7 @@ Install
 -----------------------------------
  - Create database and import config/sql/cookiemanager.sql to database
  
- - Add access data to database at config/db.php
+ - Add access data for database at config/db.php
  
  - Open https://[YOURDOMAIN]/cookiemanager/admin
  
