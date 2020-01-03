@@ -11,7 +11,7 @@ Author: Oldpwd, RAISTECH GmbH
 Requirements
 -----------------------------------
  - PHP >= 7 + curl
- - Apache mod rewrite + mod headers
+ - Apache mod rewrite
  - MySQL / MariaDB
 
 
