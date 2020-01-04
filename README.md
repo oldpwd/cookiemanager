@@ -1,6 +1,6 @@
 CookieManager 0.1.0
 
-PHP DSGVO CookieManager. Manage cookies and privacy for multiple websites by one interface.
+PHP DSGVO CookieManager. Manage cookies and privacy settings for multiple websites by one interface.
 
 CookieManager is released under the GNU Public License, version 3 or later.
 
