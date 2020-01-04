@@ -19,20 +19,17 @@ Requirements
 Install
 -----------------------------------
  - Create database and import config/sql/cookiemanager.sql to database
- 
+
  - Add access data for database at config/db.php
- 
+
  - Open https://[YOURDOMAIN]/cookiemanager/admin
- 
+
    User: admin
-   
+
    Password: admin
 
+   CHANGE ADMIN PASSWORD IN "SETTINGS" !!!
 
-    
-===============================================
-CHANGE ADMIN PASSWORD IN "Settings"
-===============================================
 
 
 -----------------------------------
@@ -56,4 +53,3 @@ A lot more
 Example
 -----------------------------------
 https://www.raistech.de
-
