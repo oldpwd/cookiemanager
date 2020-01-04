@@ -38,9 +38,10 @@ Language: config/lang.php
 Timeouts: config/timeout.php
 
 -----------------------------------
-Intigration
+Using
 -----------------------------------
-Add tag to your website
+Setup websites + layout + cookie-codes in admin
+Add the cookiemanager js-tag to your website html
 
 -----------------------------------
 Todo
