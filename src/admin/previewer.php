@@ -67,6 +67,7 @@
         $tag2 = '<script src="' . str_replace("preview/", "", $this->httpvars->appurl) . $this->token . '/"></script>';
         $tag3 = '<script>let COM_anchors=document.getElementsByTagName("a");for(i=0, len=COM_anchors.length; i<len; i++){COM_anchors[i].addEventListener("click", function(e){e.preventDefault();});}</script><a href="'. str_replace("preview/", "admin/", $this->httpvars->appurl) .'preview/' . $this->token . '/" target="_blank" style="position:fixed;top:0px;right:0px;display:inline-block;font-size:1em;z-index:999999;color:#FFF;border-bottom-left-radius:12px;background:#444;opacity:0.8;padding:15px;">&raquo; Open preview as new window</a>';
 
+        $this->exthtml = str_replace($tag2, '', $this->exthtml);
         $this->exthtml = str_replace("<head>", "<head>\n" . $tag1, $this->exthtml);
         $this->exthtml = str_replace("</body>", $tag3 . $tag2 . "\n</body>", $this->exthtml);
 
