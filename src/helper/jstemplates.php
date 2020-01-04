@@ -45,28 +45,7 @@
 
       }
 
-      private function htmlCookies() : string
-      {
-
-        $ret = "";
-
-        foreach($this->init->cookiecodes as $wert){
-
-          if($wert["sourcetype"] == "2"){
-
-            $ret .= "if(isThrowable('" . $wert["cookieid"] . "')){\n";
-              $ret .= "cookieManagerHTMLCookies = cookieManagerHTMLCookies + `" . $wert["sourcecode"] . "`;\n";
-              $ret .= "}\n";
-
-          }
-
-        }
-
-        return $ret;
-
-      }
-
-      private function jsCookies() : string
+      private function Cookies() : string
       {
 
         $ret = "";
@@ -79,7 +58,14 @@
               $ret .= $wert["sourcecode"] . "\n";
               $ret .= "}\n";
 
+          }else if($wert["sourcetype"] == "2"){
+
+            $ret .= "if(isThrowable('" . $wert["cookieid"] . "')){\n";
+              $ret .= "cookieManagerHTMLCookies = cookieManagerHTMLCookies + `" . $wert["sourcecode"] . "`;\n";
+              $ret .= "}\n";
+
           }
+
 
         }
 
@@ -141,8 +127,7 @@
 
   };
 
-  " . $this->jsCookies() . "
-  " . $this->htmlCookies() . "
+  " . $this->Cookies() . "
 
 window.addEventListener('load', async e => {
 
