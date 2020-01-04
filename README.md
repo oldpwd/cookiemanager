@@ -40,9 +40,9 @@ Timeouts: config/timeout.php
 -----------------------------------
 Using
 -----------------------------------
-Setup websites + layout + cookie-codes in admin
+1. Setup websites + layout + cookie-codes in admin
 
-Add the cookiemanager js-tag to your website html
+2. Add the cookiemanager js-tag to your website html
 
 -----------------------------------
 Todo
