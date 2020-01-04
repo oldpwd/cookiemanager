@@ -3,7 +3,7 @@ error_reporting(-1);
 
 # CookieManager is released under the GNU Public License, version 3 or later.
 # http://www.gnu.org/licenses/gpl-3.0-standalone.html
-# Author SL, Raistech GmbH
+
 
 header("Access-Control-Allow-Origin: *");
 header("Cache-Control: no-cache, no-store, must-revalidate");

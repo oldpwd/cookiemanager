@@ -2,7 +2,7 @@
 
 # CookieManager is released under the GNU Public License, version 3 or later.
 # http://www.gnu.org/licenses/gpl-3.0-standalone.html
-# Author SL, JUSTilize GmbH, Frankfurt/Main
+
 
 #SET INACTIVE TIMEOUT FOR LOGIN-SESSIONS, DEFAULT 1800 SECONDS = 30 MINUTES
 define("GLOBAL_TIMEOUT", 1800);

@@ -3,7 +3,7 @@
 
   # CookieManager is released under the GNU Public License, version 3 or later.
   # http://www.gnu.org/licenses/gpl-3.0-standalone.html
-  # Author SL, JUSTilize GmbH, Frankfurt/Main
+
 
 
 	namespace Cookiemanager\helper;
