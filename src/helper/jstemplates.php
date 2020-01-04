@@ -45,16 +45,41 @@
 
       }
 
-      private function Cookies() : string
+      private function htmlCookies() : string
       {
 
         $ret = "";
 
         foreach($this->init->cookiecodes as $wert){
 
-          $ret .= "if(isThrowable('" . $wert["cookieid"] . "')){\n";
-          $ret .= $wert["sourcecode"] . "\n";
-          $ret .= "}\n";
+          if($wert["sourcetype"] == "2"){
+
+            $ret .= "if(isThrowable('" . $wert["cookieid"] . "')){\n";
+              $ret .= "cookieManagerHTMLCookies = cookieManagerHTMLCookies + `" . $wert["sourcecode"] . "`;\n";
+              $ret .= "}\n";
+
+          }
+
+        }
+
+        return $ret;
+
+      }
+
+      private function jsCookies() : string
+      {
+
+        $ret = "";
+
+        foreach($this->init->cookiecodes as $wert){
+
+          if($wert["sourcetype"] == "3"){
+
+            $ret .= "if(isThrowable('" . $wert["cookieid"] . "')){\n";
+              $ret .= $wert["sourcecode"] . "\n";
+              $ret .= "}\n";
+
+          }
 
         }
 
@@ -91,6 +116,7 @@
   let cookieManagerTemplate = document.createElement('template');
   let cookieManagerCookies = '', cookieManagerCategories = '', catZ = 1, cooZ = 1;
   let cookieManagerAusgabe = '';
+  let cookieManagerHTMLCookies = '';
   let cookieManagerToken = '" . $_GET["token"] . "';
   let cookieManagerUserid = (docCookies.getItem(\"cookieManagerUserid\") !== null)?(docCookies.getItem(\"cookieManagerUserid\")):('" . $this->init->userid . "');
   if(docCookies.getItem(\"cookieManagerAllowLevel\") === null){ docCookies.setItem(\"cookieManagerAllowLevel\", \"0\", Infinity, \"/\"); }
@@ -115,7 +141,8 @@
 
   };
 
-  " . $this->Cookies() . "
+  " . $this->jsCookies() . "
+  " . $this->htmlCookies() . "
 
 window.addEventListener('load', async e => {
 
@@ -140,7 +167,7 @@ window.addEventListener('load', async e => {
 
         $this->jsoutput .= "
 
-        cookieManagerTemplate.innerHTML = cookieManagerAusgabe;
+        cookieManagerTemplate.innerHTML = cookieManagerAusgabe + cookieManagerHTMLCookies;
         document.body.appendChild(cookieManagerTemplate.content);
 
         const cookieManagercookieBar = document.getElementById('cookiemanager_cookiebar');
