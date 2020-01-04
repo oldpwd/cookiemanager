@@ -1,4 +1,7 @@
 /*
+ *  PHP DSGVO CookieManager. Manage cookies and privacy settings for multiple websites by one interface.
+ *  https://github.com/oldpwd/cookiemanager
+ *
  *  CookieManager is released under the GNU Public License, version 3 or later.
  *  http://www.gnu.org/licenses/gpl-3.0-standalone.html
  *
