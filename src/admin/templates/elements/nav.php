@@ -39,20 +39,20 @@
 <?php if($this->router->site[0] === "settings"){ ?>
 <span id="useron" token="<?php print $this->csrf->genToken("useron");?>"></span>
 <span id="useroff" token="<?php print $this->csrf->genToken("useroff");?>"></span>
-<? } ?>
+<?php } ?>
 <?php if($this->router->site[0] === "cookies"){ ?>
 <span id="cookieon" token="<?php print $this->csrf->genToken("cookieon");?>"></span>
 <span id="cookieoff" token="<?php print $this->csrf->genToken("cookieoff");?>"></span>
 <span id="cookiedelete" token="<?php print $this->csrf->genToken("cookiedelete");?>"></span>
-<? } ?>
+<?php } ?>
 <?php if($this->router->site[0] === "categories"){ ?>
 <span id="categoryon" token="<?php print $this->csrf->genToken("categoryon");?>"></span>
 <span id="categoryoff" token="<?php print $this->csrf->genToken("categoryoff");?>"></span>
 <span id="categorydelete" token="<?php print $this->csrf->genToken("categorydelete");?>"></span>
-<? } ?>
+<?php } ?>
 <?php if($this->router->site[0] === "companies"){ ?>
 <span id="companydelete" token="<?php print $this->csrf->genToken("companydelete");?>"></span>
-<? } ?>
+<?php } ?>
 <?php if($this->router->site[0] === "websites"){ ?>
 <span id="websitessites" token="<?php print $this->csrf->genToken("websites-sites")?>"></span>
 <span id="websiteon" token="<?php print $this->csrf->genToken("websiteon");?>"></span>
@@ -74,4 +74,4 @@
     </div>
   </form>
 </div>
-<?}?>
+<?php }?>

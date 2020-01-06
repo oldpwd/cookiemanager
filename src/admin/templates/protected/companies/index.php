@@ -29,10 +29,10 @@
             <td class="text-center actbutton">
               <?php if($wert["id"]!="1"){ ?>
               <img class="hiddenaction" token="companydelete" name="<?php print $wert["id"]; ?>" src="img/delete.png" alert="<?php print $this->httpvars->language['BUTTON_DELETE']; ?>" title="<?php print $this->httpvars->language['BUTTON_DELETE']; ?>">
-              <? } ?>
+            <?php } ?>
             </td>
           </tr>
-          <? } ?>
+        <?php } ?>
         </tbody>
       </table>
     </div>

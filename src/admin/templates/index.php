@@ -19,13 +19,13 @@
 
           </div>
           <div class="col-md-9">
-  <? } ?>
+  <?php } ?>
   <?php require_once($this->router->requirefile); ?>
   <?php if($this->httpvars->loggedin === true){ ?>
           </div>
       </div>
     </div>
-  <? } ?>
+  <?php } ?>
     <br><br>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

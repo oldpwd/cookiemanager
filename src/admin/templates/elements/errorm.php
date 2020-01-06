@@ -1,17 +1,17 @@
-<?if(isset($this->formhandle->errorm)){?>
-  <?if($this->formhandle->errorm!=""){?>
+<?php if(isset($this->formhandle->errorm)){?>
+  <?php if($this->formhandle->errorm!=""){?>
   <div class="alert alert-danger text-center" role="alert">
-    <?=$this->formhandle->errorm?>
+    <?php print $this->formhandle->errorm?>
   </div>
-<?}}?>
-<?if($this->httpvars->errorm!=""){?>
+<?php }}?>
+<?php if($this->httpvars->errorm!=""){?>
   <div class="alert alert-danger text-center" role="alert">
-    <?=$this->httpvars->errorm?>
+    <?php print $this->httpvars->errorm?>
   </div>
-<?}?>
-<?if(isset($this->formhandle->success)){?>
-  <?if($this->formhandle->success!=""){?>
+<?php }?>
+<?php if(isset($this->formhandle->success)){?>
+  <?php if($this->formhandle->success!=""){?>
   <div class="alert alert-success text-center" role="alert">
-    <?=$this->formhandle->success?>
+    <?php print $this->formhandle->success?>
   </div>
-<?}}?>
+<?php }}?>

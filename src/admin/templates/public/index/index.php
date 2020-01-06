@@ -9,7 +9,7 @@
         <div class="alert alert-danger text-center" role="alert">
           <?php print $this->httpvars->errorm; ?>
         </div>
-      <? } ?>
+      <?php } ?>
       <br>
       <form method="post">
         <input type="hidden" name="token" value="<?php print $this->csrf->genToken("login"); ?>">

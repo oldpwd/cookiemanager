@@ -35,15 +35,15 @@
               <td class="text-center actbutton">
                 <?php if($wert["id"]!="1"){ ?>
                 <img class="hiddenaction" token="<?php print ($wert["active"]==1)?("cookieoff"):("cookieon"); ?>" name="<?php print $wert["id"]; ?>" src="img/<?php print ($wert["active"]==1)?("on"):("off"); ?>.png" alert="<?php print ($wert["active"]==1)?($this->httpvars->language['BUTTON_DEACTIVATE']):($this->httpvars->language['BUTTON_ACTIVATE']); ?>" title="<?php print ($wert["active"]==1)?($this->httpvars->language['BUTTON_DEACTIVATE']):($this->httpvars->language['BUTTON_ACTIVATE']); ?>">
-                <? } ?>
+              <?php } ?>
               </td>
               <td class="text-center actbutton">
                 <?php if($wert["id"]!="1"){ ?>
                 <img class="hiddenaction" token="cookiedelete" name="<?php print $wert["id"]; ?>" src="img/delete.png" alert="<?php print $this->httpvars->language['BUTTON_DELETE']; ?>" title="<?php print $this->httpvars->language['BUTTON_DELETE']; ?>">
-                <? } ?>
+              <?php } ?>
               </td>
             </tr>
-            <? } ?>
+          <?php } ?>
           </tbody>
         </table>
       </div>

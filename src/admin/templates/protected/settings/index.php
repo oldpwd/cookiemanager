@@ -29,10 +29,10 @@
               <td class="text-center actbutton">
                 <?php if($wert["id"]!="1"){ ?>
                 <img class="hiddenaction" token="<?php print ($wert["active"]=="1")?("useroff"):("useron"); ?>" name="<?php print $wert["id"]; ?>" src="img/<?php print ($wert["active"]=="1")?("on"):("off"); ?>.png" alert="<?php print ($wert["active"]==1)?($this->httpvars->language['BUTTON_DEACTIVATE']):($this->httpvars->language['BUTTON_ACTIVATE']); ?>" title="<?php print ($wert["active"]==1)?($this->httpvars->language['BUTTON_DEACTIVATE']):($this->httpvars->language['BUTTON_ACTIVATE']); ?>">
-                <? } ?>
+              <?php } ?>
               </td>
             </tr>
-            <? } ?>
+          <?php } ?>
           </tbody>
         </table>
       </div>
