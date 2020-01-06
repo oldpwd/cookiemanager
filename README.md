@@ -10,7 +10,7 @@ http://www.gnu.org/licenses/gpl-3.0-standalone.html
 -----------------------------------
 Requirements
 -----------------------------------
- - PHP >= 7 + curl + short open tags = on (sorry for that, will be removed soon!)
+ - PHP >= 7 + curl 
  - Apache mod rewrite
  - MySQL / MariaDB
 
