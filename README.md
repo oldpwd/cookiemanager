@@ -39,6 +39,7 @@ Language: config/lang.php
 
 Timeouts: config/timeout.php
 
+
 -----------------------------------
 Using
 -----------------------------------
@@ -46,12 +47,6 @@ Using
 
 2. Add the cookiemanager js-tag to your website html
 
------------------------------------
-Todo
------------------------------------
-REMOVE short open tags!
-
-A lot more
 
 -----------------------------------
 Example
