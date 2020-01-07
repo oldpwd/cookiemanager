@@ -1,4 +1,4 @@
-CookieManager 0.1.0
+CookieManager 0.2.0
 
 PHP DSGVO CookieManager. Manage cookies and privacy settings for multiple websites by one interface.
 
