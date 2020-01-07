@@ -187,7 +187,7 @@ CREATE TABLE `cookies` (
 --
 
 INSERT INTO `cookies` (`id`, `company`, `name`, `internalremarks`, `beschreibung`, `personenbezogenedaten`, `landderdatenerfassung`, `wirdgeloeschtnach`, `sourcetype`, `sourcecode`, `active`, `deleted`) VALUES
-(1, 1, 'CookieManager', 'Alle Seiten, Standard', 'Der CookieManagers speichert Ihre Präferenzen für Cookies und Elemente, die Sie beim Besuch unserer Webseite angegeben haben ab, um diese dauerhaft für den jeweils verwendeten Internet-Browser verfügbar und für Sie abrufbar zu halten.', 'IP-Adresse, Datum und Uhrzeit der Präferenzfestlegung', 'Deutschland', 'nie', 1, '', 1, 0);
+(1, 1, 'CookieManager', 'Alle Seiten, Standard', 'Der CookieManagers speichert Ihre Präferenzen für Cookies und Elemente, die Sie beim Besuch unserer Webseite angegeben haben ab, um diese dauerhaft für den jeweils verwendeten Internet-Browser verfügbar und für Sie abrufbar zu halten.', 'Datum und Uhrzeit der Präferenzfestlegung', 'Deutschland', 'nie', 1, '', 1, 0);
 
 -- --------------------------------------------------------
 
