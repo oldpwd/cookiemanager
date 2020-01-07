@@ -17,6 +17,8 @@
 
     private $ipmaxactions = IPMAXREGS;
 
+    public $tcpiphash;
+
     public $websiteid;
 
     public $webhost;
@@ -36,6 +38,8 @@
     	{
 
         $this->db = $db;
+
+        $this->tcpiphash = hash('sha1', $_SERVER["REMOTE_ADDR"]);
 
 			}
 
@@ -99,7 +103,7 @@
       {
 
         $this->db->sql = "SELECT COUNT(allowlevel) AS anzahl FROM `" . $this->opttable . "` WHERE tcpip=? AND allowlevel='8' AND zeitpunkt > ?";
-        $this->db->datain = [$_SERVER["REMOTE_ADDR"], (time() - $this->iptimeout)];
+        $this->db->datain = [$this->tcpiphash, (time() - $this->iptimeout)];
         $this->db->executeStm();
         if($this->db->dbdata["anzahl"] < $this->ipmaxactions){
 
@@ -126,7 +130,7 @@
             if($this->checkIpActions()){
 
               $this->db->sql = "INSERT INTO `" . $this->opttable . "` SET usertoken=?, websiteid=?, zeitpunkt=?, tcpip=?, allowlevel='8'";
-              $this->db->datain = [$this->userid, $this->websiteid, time(), $_SERVER["REMOTE_ADDR"]];
+              $this->db->datain = [$this->userid, $this->websiteid, time(), $this->tcpiphash];
               $this->db->executeStm();
               $this->checkLogin();
 

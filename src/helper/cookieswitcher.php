@@ -109,7 +109,7 @@
             $this->db->datain[] = $this->init->websiteid;
             $this->db->datain[] = $wert;
             $this->db->datain[] = time();
-            $this->db->datain[] = $_SERVER["REMOTE_ADDR"];
+            $this->db->datain[] = $this->init->tcpiphash;
 
           }
 
