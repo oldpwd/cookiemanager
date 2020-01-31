@@ -24,7 +24,7 @@
       <select multiple size="5" name="websites[]" class="form-control col-md-6"<?php print ($this->sitedata->cookieid === "1")?("  disabled=\"true\""):("")?>>
         <?php
           $this->sitedata->webElementsFetchCookieRequiredListing('cookie_websites');
-          print $this->siteelem->genSelectList($this->sitedata->multidata['cookie2websites']);
+          print $this->siteelem->genSelectList(($this->sitedata->cookieid)?($this->sitedata->multidata['cookie2websites']):([0]));
         ?>
       </select>
       <span class="kleinschrift grayscale"><?php print $this->httpvars->language['LABEL_MULTI_SELECT']; ?></span><br>
@@ -65,6 +65,12 @@
           $this->sitedata->webElementsFetchCookieRequiredListing('cookie_sourcetypes');
           print $this->siteelem->genSelectList([$this->sitedata->cookiePushData("sourcetype")]);
         ?>
+      </select>
+      <br>
+      <label for="opttype">Opt-Mode:</label>
+      <select name="opttype" class="form-control col-md-6"<?php print ($this->sitedata->cookieid === "1")?("  disabled=\"true\""):("")?> required>
+        <option value="1"<?php print ($this->sitedata->cookiePushData("opttype") == "1")?("  selected=\"selected\""):("")?>>Opt-In</option>
+        <option value="2"<?php print ($this->sitedata->cookiePushData("opttype") == "2")?("  selected=\"selected\""):("")?>>Opt-Out</option>
       </select>
       <br>
       <label for="sourcecode"><?php print $this->httpvars->language['LABEL_COOKIEFORM11']; ?>:</label>

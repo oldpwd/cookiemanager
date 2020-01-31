@@ -278,8 +278,9 @@
           if($_POST["id"] !== "1"){
 
             $this->cookieid = $_POST["id"];
-            $this->sql .= ", sourcetype=?";
+            $this->sql .= ", sourcetype=?, opttype=?";
             $this->datain[] = htmlspecialchars($_POST["sourcetype"]);
+            $this->datain[] = htmlspecialchars($_POST["opttype"]);
 
           }
 

@@ -40,8 +40,34 @@
       function __destruct()
       {
 
-        //print preg_replace('/[\r\n\t]/', '', $this->jsoutput);
         print $this->jsoutput;
+
+      }
+
+      private function minifyOutput($text) : string
+      {
+
+        return preg_replace('/[\r\n\t]/', '', $text);
+        //return $text;
+
+      }
+
+      private function setAllowLevel() : string
+      {
+
+        $ausgabe="0";
+
+        foreach($this->init->cookiecodes as $wert){
+
+          if($wert['opttype'] == "2"){
+
+            $ausgabe = $ausgabe . 'C' . $wert['cookieid'];
+
+          }
+
+        }
+
+        return $ausgabe;
 
       }
 
@@ -76,58 +102,53 @@
       private function cookieBox() : void
       {
 
-        $this->jsoutput .= "for(var cat in cookieManager.categories){\n";
-          $this->jsoutput .= "cookieManagerCookies = '', cooZ = 1;\n";
-          $this->jsoutput .= "for(var cookie in cookieManager.categories[cat].cookies){\n";
-            $this->jsoutput .= "cookieManagerCookies = cookieManagerCookies + `" . file_get_contents($this->templatedir . "cookieboxcookie.txt") . "`;\n";
-          $this->jsoutput .= "cooZ++;}\n";
-        $this->jsoutput .= "cookieManagerCategories = cookieManagerCategories + `" . file_get_contents($this->templatedir . "cookieboxcategory.txt") . "`;\n";
-        $this->jsoutput .= "catZ++;}\n";
-        $this->jsoutput .=  "\ncookieManagerAusgabe = cookieManagerAusgabe + `" . file_get_contents($this->templatedir . "cookiebox.txt") . "`;\n";
+        $this->jsoutput .= "for(var cat in cookieManager.categories){";
+          $this->jsoutput .= "cookieManagerCookies = '', cooZ = 1;";
+          $this->jsoutput .= "for(var cookie in cookieManager.categories[cat].cookies){";
+            $this->jsoutput .= "cookieManagerCookies = cookieManagerCookies + `" . $this->minifyOutput(file_get_contents($this->templatedir . "cookieboxcookie.txt")) . "`;";
+          $this->jsoutput .= "cooZ++;}";
+        $this->jsoutput .= "cookieManagerCategories = cookieManagerCategories + `" . $this->minifyOutput(file_get_contents($this->templatedir . "cookieboxcategory.txt")) . "`;";
+        $this->jsoutput .= "catZ++;}";
+        $this->jsoutput .=  "cookieManagerAusgabe = cookieManagerAusgabe + `" . $this->minifyOutput(file_get_contents($this->templatedir . "cookiebox.txt")) . "`;";
 
       }
 
       private function cookieBar() : void
       {
 
-        $this->jsoutput .=  "\ncookieManagerAusgabe = cookieManagerAusgabe + `" . file_get_contents($this->templatedir . "cookiebar.txt") . "`;\n";
+        $this->jsoutput .=  "\ncookieManagerAusgabe = cookieManagerAusgabe + `" . $this->minifyOutput(file_get_contents($this->templatedir . "cookiebar.txt")) . "`;";
 
       }
 
       private function jsFunctions() : void
       {
 
-        $this->jsoutput .= "
+        $this->jsoutput .= $this->minifyOutput("
+let cookieManagerTemplate = document.createElement('template');let cookieManagerCookies = '', cookieManagerCategories = '', catZ = 1, cooZ = 1;
+let cookieManagerAusgabe = '';
+let cookieManagerInitAllowLevel = '" . $this->setAllowLevel() . "';
+let cookieManagerHTMLCookies = '';
+let cookieManagerToken = '" . $_GET["token"] . "';
+let cookieManagerUserid = (docCookies.getItem(\"cookieManagerUserid\") !== null)?(docCookies.getItem(\"cookieManagerUserid\")):('" . $this->init->userid . "');
+if(docCookies.getItem(\"cookieManagerAllowLevel\") === null){ docCookies.setItem(\"cookieManagerAllowLevel\", cookieManagerInitAllowLevel, Infinity, \"/\"); }
+let cookieManagerAllowLevel = docCookies.getItem(\"cookieManagerAllowLevel\");
+let cookieManagerCallUrl = '" . $this->httpvars->appurl . "' + cookieManagerToken + '/' + cookieManagerUserid + '/';
+let cookieManagerAppUrl = '" . $this->httpvars->appurl . "' + cookieManagerToken + '/' + cookieManagerUserid + '/' + cookieManagerAllowLevel  + '/';
+        const isThrowable = (num) => {
+          var arr = cookieManagerAllowLevel.split('C');
+          for(var i = 0; i < arr.length; i++){
+            if(arr[i] == num){
+              return true;
+            }
+          }
+          return false;
+        };
 
-  let cookieManagerTemplate = document.createElement('template');
-  let cookieManagerCookies = '', cookieManagerCategories = '', catZ = 1, cooZ = 1;
-  let cookieManagerAusgabe = '';
-  let cookieManagerHTMLCookies = '';
-  let cookieManagerToken = '" . $_GET["token"] . "';
-  let cookieManagerUserid = (docCookies.getItem(\"cookieManagerUserid\") !== null)?(docCookies.getItem(\"cookieManagerUserid\")):('" . $this->init->userid . "');
-  if(docCookies.getItem(\"cookieManagerAllowLevel\") === null){ docCookies.setItem(\"cookieManagerAllowLevel\", \"0\", Infinity, \"/\"); }
-  let cookieManagerAllowLevel = docCookies.getItem(\"cookieManagerAllowLevel\");
-  let cookieManagerCallUrl = '" . $this->httpvars->appurl . "' + cookieManagerToken + '/' + cookieManagerUserid + '/';
-  let cookieManagerAppUrl = '" . $this->httpvars->appurl . "' + cookieManagerToken + '/' + cookieManagerUserid + '/' + cookieManagerAllowLevel  + '/';
+        ");
 
-  const isThrowable = (num) => {
+$this->jsoutput .= $this->Cookies();
 
-    var arr = cookieManagerAllowLevel.split('C');
-    for(var i = 0; i < arr.length; i++) {
-
-      if(arr[i] == num){
-
-        return true;
-
-      }
-
-    }
-
-    return false;
-
-  };
-
-  " . $this->Cookies() . "
+$this->jsoutput .= $this->minifyOutput("
 
 window.addEventListener('load', async e => {
 
@@ -143,14 +164,14 @@ window.addEventListener('load', async e => {
 
         }
 
-        ";
+        ");
 
       }
 
       private function jsBottom() : void
       {
 
-        $this->jsoutput .= "
+        $this->jsoutput .= $this->minifyOutput("
 
         cookieManagerTemplate.innerHTML = cookieManagerAusgabe + cookieManagerHTMLCookies;
         document.body.appendChild(cookieManagerTemplate.content);
@@ -179,7 +200,7 @@ window.addEventListener('load', async e => {
 
           });
 
-        }
+        };
 
         const pushAllowLevel = () => {
 
@@ -197,7 +218,7 @@ window.addEventListener('load', async e => {
 
           docCookies.setItem(\"cookieManagerAllowLevel\", allowLevel, Infinity, \"/\");
 
-        }
+        };
 
         const setStatus = (obj) => {
 
@@ -222,7 +243,7 @@ window.addEventListener('load', async e => {
 
           }
 
-        }
+        };
 
         cookieManagerAcceptAll.addEventListener('click', function() {
 
@@ -281,7 +302,7 @@ window.addEventListener('load', async e => {
 
 });
 
-        ";
+        ");
 
       }
 

@@ -94,6 +94,7 @@
                               a.personenbezogenedaten AS cookiepersonenbezogenedaten,
                               a.landderdatenerfassung AS cookielandderdatenerfassung,
                               a.wirdgeloeschtnach AS cookiewirdgeloeschtnach,
+                              a.opttype AS cookieopttype,
                               CONCAT(d.name, \"\n\", d.strasse, \"\n\", d.ort, \"\n\", d.land) AS company,
                               (
                                 SELECT aa.zeitpunkt FROM `" . $this->init->opttable . "` aa WHERE aa.usertoken=? AND (aa.websiteid=? AND aa.cookieid=a.id) AND aa.allowlevel=1
@@ -117,9 +118,9 @@
 
           while($line = $this->db->statement->fetch()){
 
-           $this->checksum .= $line["cookieid"] . $line["companyid"] . $line["cookiename"] . $line["cookiebeschreibung"] . $line["cookiepersonenbezogenedaten"] . $line["cookielandderdatenerfassung"] . $line["cookiewirdgeloeschtnach"] . $line["company"];
+           $this->checksum .= $line["cookieid"] . $line["companyid"] . $line["cookiename"] . $line["cookiebeschreibung"] . $line["cookiepersonenbezogenedaten"] . $line["cookielandderdatenerfassung"] . $line["cookiewirdgeloeschtnach"] . $line["cookieopttype"] . $line["company"];
 
-           $switcher = (is_null($line["optin"]))?(($wert->catid === 1)?("on"):("off")):("on");
+           $switcher = (is_null($line["optin"]))?(($wert->catid === 1 || ($line["cookieopttype"]=="2" && $this->init->firstreg===true))?("on"):("off")):("on");
            $optin = (is_null($line["optin"]))?(($wert->catid === 1)?("Essential"):("-")):(date("d.m.Y H:i:s", (int)$line["optin"]));
 
            $tmparr[$i] = (object)[
@@ -135,6 +136,7 @@
                               'cookiepersonenbezogenedaten' => trim($this->convertStringLiterals($line["cookiepersonenbezogenedaten"])),
                               'cookielandderdatenerfassung' => trim($this->convertStringLiterals($line["cookielandderdatenerfassung"])),
                               'cookiewirdgeloeschtnach' => trim($this->convertStringLiterals($line["cookiewirdgeloeschtnach"])),
+                              'cookieopttype' => (int)$line["cookieopttype"],
                               'company' => trim($this->convertStringLiterals($line["company"])),
                               'companyimpressum' => trim($this->convertStringLiterals($line["companyimpressum"])),
                               'companydatenschutz' => trim($this->convertStringLiterals($line["companydatenschutz"]))

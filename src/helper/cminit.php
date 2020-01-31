@@ -25,6 +25,8 @@
 
     public $userid;
 
+    public $firstreg = false;
+
     public $loggedin = false;
 
     public $regdate;
@@ -64,6 +66,7 @@
         $this->db->sql = " SELECT
 
                             a.id AS cookieid,
+                            a.opttype AS opttype,
                             a.sourcetype AS sourcetype,
                             a.sourcecode AS sourcecode
 
@@ -83,6 +86,7 @@
           $this->cookiecodes[] = [
 
             'cookieid' => $line["cookieid"],
+            'opttype' => $line["opttype"],
             'sourcetype' => $line["sourcetype"],
             'sourcecode' => htmlspecialchars_decode($line["sourcecode"]),
             'useroptin' => ''
@@ -129,6 +133,7 @@
 
             if($this->checkIpActions()){
 
+              $this->firstreg = true;
               $this->db->sql = "INSERT INTO `" . $this->opttable . "` SET usertoken=?, websiteid=?, zeitpunkt=?, tcpip=?, allowlevel='8'";
               $this->db->datain = [$this->userid, $this->websiteid, time(), $this->tcpiphash];
               $this->db->executeStm();
@@ -140,6 +145,7 @@
 
         }else{
 
+          $this->firstreg = true;
           $this->userid = bin2hex(random_bytes(16));
           $this->setOptTable();
 
@@ -147,7 +153,6 @@
 
             $this->userid = bin2hex(random_bytes(16));
             $this->setOptTable();
-
             $seccnt++;
 
           }

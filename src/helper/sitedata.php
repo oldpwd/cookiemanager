@@ -205,6 +205,7 @@
                           a.wirdgeloeschtnach AS wirdgeloeschtnach,
                           a.sourcetype AS sourcetype,
                           a.sourcecode AS sourcecode,
+                          a.opttype AS opttype,
                           a.active AS active,
                           a.deleted AS deleted,
                           b.category AS category
