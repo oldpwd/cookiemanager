@@ -2,7 +2,7 @@
 <div style="font-size:${cookieManager.cookiebox.boxcookiedescfontsize};">
   <table width="100%" style="border-bottom:1px solid ${cookieManager.cookiebox.boxcookiebordercolor};margin-bottom:10px;">
     <tr>
-      <td style="vertical-align:middle;text-align:left;"><img src="${cookieManager.categories[cat].cookies[cookie].cookieswitcher}" class="cookiemanager_cookieswitcher" essential="${cookieManager.categories[cat].cookies[cookie].cookieessential}" name="${cookieManager.categories[cat].cookies[cookie].cookieid}" status="${cookieManager.categories[cat].cookies[cookie].cookiestatus}"  style="cursor:pointer;display:inline-block;margin-right:10px;"></td>
+      <td style="vertical-align:middle;text-align:left;"><img src="${cookieManager.categories[cat].cookies[cookie].cookieswitcher}" class="cookiemanager_cookieswitcher"  id="cookiemanager_cookieswitcher_${cookieManager.categories[cat].cookies[cookie].cookieid}"  essential="${cookieManager.categories[cat].cookies[cookie].cookieessential}" name="${cookieManager.categories[cat].cookies[cookie].cookieid}" status="${cookieManager.categories[cat].cookies[cookie].cookiestatus}"  style="cursor:pointer;display:inline-block;margin-right:10px;"></td>
       <td width="100%" style="vertical-align:middle;font-size:${cookieManager.cookiebox.boxcookiedeschlfontsize};"><b>${catZ}.${cooZ}. ${cookieManager.categories[cat].cookies[cookie].cookiename}</b></td>
     </tr>
   </table>
