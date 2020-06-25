@@ -19,6 +19,8 @@ ${cookieManager.cookiebar.barmaintext}
 <a href="${cookieManager.cookiebar.websiteimprint}" target="_blank" style="color:${cookieManager.cookiebar.barmaintextcolor};font-size:${cookieManager.cookiebar.barmaintextfontsize};">Impressum</a>
 &nbsp;&nbsp;|&nbsp;&nbsp;
 <a href="${cookieManager.cookiebar.websiteprivacy}" target="_blank" style="color:${cookieManager.cookiebar.barmaintextcolor};font-size:${cookieManager.cookiebar.barmaintextfontsize};">Datenschutz</a>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="https://github.com/oldpwd/cookiemanager" target="_blank" style="color:${cookieManager.cookiebar.barmaintextcolor};font-size:${cookieManager.cookiebar.barmaintextfontsize};">CookieManager</a>
 <br>
 </div>
 </div>
