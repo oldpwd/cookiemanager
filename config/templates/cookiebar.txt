@@ -14,11 +14,12 @@ ${cookieManager.cookiebar.barmaintext}
 </tr>
 </table>
 </div>
-<div style="text-align:center">
+<div style="text-align:center;color:${cookieManager.cookiebar.barmaintextcolor};font-size:${cookieManager.cookiebar.barmaintextfontsize};">
 <br>
-<a href="https://github.com/oldpwd/cookiemanager" title="Open CookieManager" target="_blank">
-<img src="${cookieManager.logourl}">
-</a>
+<a href="${cookieManager.cookiebar.websiteimprint}" target="_blank" style="color:${cookieManager.cookiebar.barmaintextcolor};font-size:${cookieManager.cookiebar.barmaintextfontsize};">Impressum</a>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="${cookieManager.cookiebar.websiteprivacy}" target="_blank" style="color:${cookieManager.cookiebar.barmaintextcolor};font-size:${cookieManager.cookiebar.barmaintextfontsize};">Datenschutz</a>
+<br>
 </div>
 </div>
 <div id="cookiemanager_fingerprint" class="cookiemanager_boxopener" title="${cookieManager.cookiebar.fingerprinttitle}" style="cursor:pointer;width:60px;height:60px;position:fixed;bottom:20px;left:20px;background:url('${cookieManager.fingerprinturl}') no-repeat center center;border-radius:45px;background-color:${cookieManager.cookiebar.bgcolor};opacity:0.8;z-index:${cookieManager.cookiebar.fingerprintzindex};">
