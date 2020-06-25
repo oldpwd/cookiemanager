@@ -166,6 +166,8 @@ $langElements = [
   'h2fontsize'                   =>                'Schriftgröße Überschriften',
   'h2fontweight'                 =>                'Schriftdicke Überschriften',
   'boxeinleitung'                =>                'Einleitung Box',
+  'websiteimprint'               =>                'Impressum der Webseite',
+  'websiteprivacy'               =>                'Datenschutzerklärung der Webseite',
 
 
   /*Error msg*/
