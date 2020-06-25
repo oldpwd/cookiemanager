@@ -981,6 +981,10 @@ ALTER TABLE `user`
 --
 ALTER TABLE `cookies` 
   ADD `opttype` TINYINT UNSIGNED NOT NULL DEFAULT '1' COMMENT '1=Optin, 2=Optout' AFTER `sourcecode`;
+--
+-- UPDATE 20200625
+--
+INSERT INTO `cookiebar_vars` (`id`, `varname`, `input`, `defaultval`) VALUES (NULL, 'websiteimprint', 'input', 'impressum.html'), (NULL, 'websiteprivacy', 'input', 'datenschutz.html');
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
